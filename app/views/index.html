@@ -1,0 +1,31 @@
+<div ng-controller="DocumentationController" ng-cloak class="fullScreen">
+  <div id="serviceSelection" class="intro-header fullScreen">
+    <div class="intro-message fullScreen">
+      <h1>OGC Generic Client</h1>
+      <hr class="intro-divider"/>
+      <div class="row fullScreen">
+        <div class="col-xs-4 col-xs-offset-4">
+          <form ng-submit="requestDocumentation(url)">
+            <div class="input-group">
+              <input type="url" list="exampleurl" class="form-control" placeholder="Service URL" ng-model="url" required>
+              <datalist id="exampleurl">
+                <option value="http://localhost:3002/csw">
+                <option value="http://localhost:3001/wfs">
+                <option value="http://localhost:3000/wps">
+              </datalist>
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <span class="glyphicon glyphicon-play" aria-hidden="true")></span>
+                </button>
+              </span>
+            </div>
+            <div class="alert alert-danger fade in" ng-show="errorMsg">
+              <a class="close" ng-click="errorMsg = null">&times;</a>
+              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> {{errorMsg}}
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

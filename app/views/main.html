@@ -1,0 +1,87 @@
+<div class="navbar navbar-default">
+  <a class="navbar-brand text-muted" href="#/">{{serviceTitle}}</a>
+  <ul class="nav nav-pills pull-right">
+    <li>
+      <a ng-click="openServiceMetadata()" href="">
+        Metadata
+      </a>
+    </li>
+  </ul>
+</div>
+<div ng-controller="ClassContentController" style="width:100%; height:90%">
+  <div class="row" style="width:100%; height:100%">
+    <div class="col-sm-2 sidebar" style="width:15%; height:100%">
+      <div id="menu-list" class="list-group">
+        <span ng-repeat="layer in availableLayers">
+					<button type="button" class="list-group-item active" style="margin-top:5px" data-toggle="collapse" ng-attr-data-target="{{'#l'+$index}}">
+						<span class="glyphicon glyphicon-map-marker glyphicon-menu" aria-hidden="true"></span> {{layer.name}}
+          </button>
+            <div ng-attr-id="{{'l'+$index}}" class="panel-collapse collapse">
+              <div class="list-group">
+                <button type="button" class="list-group-item" ng-click="getLayer(layer)">
+						      <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Add to map
+				        </button>
+                <button type="button" class="list-group-item">
+						      <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Options
+				        </button>
+                <button type="button" class="list-group-item" ng-click="openLayerMetadata(layer.name)">
+						      <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Metadata
+				        </button>
+              </div>
+            </div>
+        </span>
+        <span ng-repeat="output in availableOutputs.values">
+					<button type="button" class="list-group-item active" style="margin-top:5px" data-toggle="collapse" ng-attr-data-target="{{'#o'+$index}}">
+						<span class="glyphicon glyphicon-map-marker glyphicon-menu" aria-hidden="true"></span> {{output.name}}
+          </button>
+            <div ng-attr-id="{{'o'+$index}}" class="panel-collapse collapse">
+              <div class="list-group">
+                <button type="button" class="list-group-item" ng-click="getOutputMap(output)">
+						      <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Add to map
+				        </button>
+                <button type="button" class="list-group-item" ng-click="openOutputQuery(output)">
+						      <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Options
+				        </button>
+                <button type="button" class="list-group-item" ng-click="openOutputMetadata(output)">
+						      <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Metadata
+				        </button>
+              </div>
+            </div>
+        </span>
+        <span ng-repeat="process in availableProcesses">
+					<button type="button" class="list-group-item active" style="margin-top:5px" data-toggle="collapse" ng-attr-data-target="{{'#p'+$index}}">
+						<span class="glyphicon glyphicon-wrench glyphicon-menu" aria-hidden="true"></span> {{process}}
+          </button>
+            <div ng-attr-id="{{'p'+$index}}" class="panel-collapse collapse">
+              <div class="list-group">
+                <button type="button" class="list-group-item" ng-click="createJob(process)">
+						      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Run process
+				        </button>
+                <button type="button" class="list-group-item" ng-click="openLayerMetadata(process)">
+						      <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Metadata
+				        </button>
+              </div>
+            </div>
+        </span>
+      </div>
+    </div>
+    <div class="col-sm-10" style="width:85%; height:100%">
+      <ul class="nav nav-pills" style="width:100%; height:5%">
+        <li role="presentation" ng-class="{active: mapTab}" ng-click="changeMapTab()"><a>Map</a></li>
+        <li role="presentation" ng-class="{active: !mapTab}" ng-click="changeMapTab()"><a>JSON-LD</a></li>
+      </ul>
+      <div class="spinner" ng-show="isLoadingData">
+        <span us-spinner="{radius:8, width:5, length:3, lines:9}"></span>
+        <p>Loading...</p>
+      </div>
+      <div ng-show="!isLoadingData" style="width:100%; height:95%">
+        <div ng-show="mapTab" style="width:100%; height:100%">
+          <leaflet width="100%" height="100%" controls="controls" center="world"></leaflet>
+        </div>
+        <div ng-hide="mapTab">
+          <pre ng-bind-html="layerData | prettify"></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

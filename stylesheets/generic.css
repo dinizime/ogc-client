@@ -1,0 +1,78 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #F3F3F4;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {    
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+.fullScreen {
+    height:100%;
+    width:100%;
+}
+
+.intro-header {
+    text-align: center;
+    color: #f8f8f8;
+     background: url(../images/world-map-background.jpg) no-repeat center center;
+    background-color: lightgray;
+    background-size: cover;
+    opacity: 0.8;
+}
+
+.intro-message {
+    position: relative;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+.intro-message > h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 5em;
+}
+
+.intro-divider {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
+.string { color: green; }
+.number { color: darkorange; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.key { color: red; }
+
+.sidebar {
+    background-color: #F3F3F4;
+}
+
+.spinner {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.spinner p {
+    margin-top: 20px;
+}
+
+#menu-list .glyphicon { margin-right:10px; }
+
+.panel-collapse>.list-group .list-group-item:first-child {border-top-right-radius: 0;border-top-left-radius: 0;}
+.panel-collapse>.list-group .list-group-item {border-width: 1px 0;}
+.panel-collapse>.list-group {margin-bottom: 0;}
+.panel-collapse .list-group-item {border-radius:0;}

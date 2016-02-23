@@ -1,0 +1,26 @@
+{
+  "name": "OGC Generic Client",
+  "description": "Generic Client for RESTful JSON based OGC services",
+  "main": "localhost:1337",
+  "authors": [
+    "Felipe Diniz"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "WFS",
+    "OGC"
+  ],
+  "homepage": "https://github.com/dinizime/wfsjs",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-spinner": "~0.8.0"
+  }
+}

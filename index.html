@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html; charset=UTF8">
+<html ng-app='genericClientApp'>
+<head>
+    <title>OGC Generic Client</title>
+    <link rel='stylesheet' href='stylesheets/leaflet.css', type="text/css">
+    <link rel='stylesheet' href='stylesheets/bootstrap.min.css', type="text/css">
+    <link rel='stylesheet' href='stylesheets/leaflet.draw.css', type="text/css">
+    <link rel='stylesheet' href='stylesheets/generic.css', type="text/css">
+</head>
+<body>
+
+    <div ng-view class="fullScreen">
+   </div>
+
+  
+    <script type="text/javascript" src='javascripts/angular.min.js'></script>
+    <script type="text/javascript" src='javascripts/angular-route.min.js'></script>
+
+    <script type="text/javascript" src='javascripts/jquery-1.11.3.min.js'></script>
+    <script type="text/javascript" src='javascripts/bootstrap.min.js'></script>
+    <script type="text/javascript" src='javascripts/ui-bootstrap-tpls-0.14.3.min.js'></script>
+    <script type="text/javascript" src='javascripts/angular-simple-logger.min.js'></script>
+    <script type="text/javascript" src='javascripts/leaflet.js'></script>
+    <script type="text/javascript" src='javascripts/ui-leaflet.min.js'></script>
+    <script type="text/javascript" src='javascripts/leaflet.draw.js'></script>
+    
+    <script type="text/javascript" src='bower_components/spin.js/spin.js', type="text/javascript"></script>
+    <script type="text/javascript" src='bower_components/angular-spinner/angular-spinner.js', type="text/javascript"></script>
+
+    <script type="text/javascript" src='app/app.js'></script>
+    <script type="text/javascript" src='app/controllers/documentationController.js'></script>
+    <script type="text/javascript" src='app/services/documentationFactory.js'></script>
+    <script type="text/javascript" src='app/services/jobFactory.js'></script>
+    <script type="text/javascript" src='app/controllers/serviceController.js'></script>
+    <script type="text/javascript" src='app/controllers/classContentController.js'></script>
+</body>
+</html>

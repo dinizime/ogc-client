@@ -1,0 +1,31 @@
+<div class="modal-header">
+  <h3 class="modal-title">{{name}} Metadata</h3>
+</div>
+<div class="modal-body">
+  <uib-tabset>
+    <uib-tab heading="Metadata">
+      <pre ng-bind-html="metadata | prettify"></pre>
+    </uib-tab>
+    <uib-tab heading="JSON-Schema">
+      <div class="spinner" ng-show="isLoadingSchema">
+        <span us-spinner="{radius:8, width:5, length:3, lines:9}"></span>
+        <p>Loading...</p>
+      </div>
+      <div ng-show="!isLoadingSchema">
+        <pre ng-bind-html="schema | prettify"></pre>
+      </div>
+    </uib-tab>
+    <uib-tab heading="Context">
+      <div class="spinner" ng-show="isLoadingContext">
+        <span us-spinner="{radius:8, width:5, length:3, lines:9}"></span>
+        <p>Loading...</p>
+      </div>
+      <div ng-show="!isLoadingContext">
+        <pre ng-bind-html="context | prettify"></pre>
+      </div>
+    </uib-tab>
+  </uib-tabset>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" type="button" ng-click="close()">Close</button>
+</div>
